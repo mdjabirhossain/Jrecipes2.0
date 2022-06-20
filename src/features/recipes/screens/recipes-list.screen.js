@@ -1,7 +1,7 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
 import { recipes } from "../../../services/data/data.mock";
-import { RecipeList } from "../components/recipes-list.styles";
+import { RecipeList } from "./recipes-list.styles";
 import { RecipeCard } from "../components/recipe-card.component";
 import { SafeArea } from "../../../components/utils/safearea.component";
 

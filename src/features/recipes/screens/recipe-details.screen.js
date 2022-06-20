@@ -7,7 +7,7 @@ import {
   Dimensions,
   TouchableHighlight,
 } from "react-native";
-import styles from "./styles";
+import styles from "./recipe-details.styles";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import {
   getIngredientName,
@@ -68,14 +68,15 @@ export const RecipeDetailsScreen = (props) => {
             renderItem={renderImage}
             sliderWidth={viewportWidth}
             itemWidth={viewportWidth}
-            inactiveSlideScale={1}
+            activeSlideOffset={0.05}
+            inactiveSlideScale={0.4}
             inactiveSlideOpacity={1}
             firstItem={0}
             loop={false}
             autoplay={false}
             autoplayDelay={500}
             autoplayInterval={3000}
-            onSnapToItem={(index) => setActiveSlide(0)}
+            onSnapToItem={(index) => setActiveSlide(index)}
           />
           <Pagination
             dotsLength={item.photosArray.length}

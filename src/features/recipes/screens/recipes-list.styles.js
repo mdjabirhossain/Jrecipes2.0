@@ -5,6 +5,6 @@ import { CurrentRenderContext } from "@react-navigation/native";
 export const RecipeList = styled(FlatList).attrs({
   contentContainerStyle: {
     // padding: 16,
-    marginTop: 20,
+    // marginTop: -50,
   },
 })``;
