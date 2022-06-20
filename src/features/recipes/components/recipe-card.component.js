@@ -11,14 +11,12 @@ import { Text, View } from "react-native";
 
 export const RecipeCard = ({ item }) => {
   return (
-    <TouchableOpacity>
-      <RecipeCardContainer>
-        <RecipeCardPhoto source={{ uri: item.photo_url }} />
-        <RecipeCardTitle>{item.title}</RecipeCardTitle>
-        <RecipeCategoryText>
-          {getCategoryName(item.categoryId)}
-        </RecipeCategoryText>
-      </RecipeCardContainer>
-    </TouchableOpacity>
+    <RecipeCardContainer>
+      <RecipeCardPhoto source={{ uri: item.photo_url }} />
+      <RecipeCardTitle>{item.title}</RecipeCardTitle>
+      <RecipeCategoryText>
+        {getCategoryName(item.categoryId)}
+      </RecipeCategoryText>
+    </RecipeCardContainer>
   );
 };

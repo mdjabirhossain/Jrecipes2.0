@@ -13,9 +13,9 @@ import {
   getIngredientName,
   getCategoryName,
   getCategoryById,
-} from "../../data/MockDataAPI";
-import BackButton from "../../components/BackButton/BackButton";
-import ViewIngredientsButton from "../../components/ViewIngredientsButton/ViewIngredientsButton";
+} from "../../../services/data/mock.data.api";
+import BackButton from "../../../components/utils/backbutton.component";
+import ViewIngredientsButton from "../../../components/utils/view-ingredients-button.component";
 
 const { width: viewportWidth } = Dimensions.get("window");
 
@@ -108,7 +108,7 @@ export const RecipeDetailsScreen = (props) => {
         <View style={styles.infoContainer}>
           <Image
             style={styles.infoPhoto}
-            source={require("../../../assets/icons/time.png")}
+            source={require("../../../../assets/icons/time.png")}
           />
           <Text style={styles.infoRecipe}>{item.time} minutes </Text>
         </View>
