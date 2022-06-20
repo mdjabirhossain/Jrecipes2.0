@@ -16,7 +16,10 @@ import {
 } from "../../../services/data/mock.data.api";
 import BackButton from "../../../components/utils/backbutton.component";
 import ViewIngredientsButton from "../../../components/utils/view-ingredients-button.component";
-
+import {
+  RecipeCarouselImage,
+  RecipeCarousal,
+} from "../components/recipe-details.component";
 const { width: viewportWidth } = Dimensions.get("window");
 
 export const RecipeDetailsScreen = (props) => {
@@ -44,14 +47,6 @@ export const RecipeDetailsScreen = (props) => {
     });
   }, []);
 
-  const renderImage = ({ item }) => (
-    <TouchableHighlight>
-      <View style={styles.imageContainer}>
-        <Image style={styles.image} source={{ uri: item }} />
-      </View>
-    </TouchableHighlight>
-  );
-
   const onPressIngredient = (item) => {
     var name = getIngredientName(item);
     let ingredient = item;
@@ -62,10 +57,10 @@ export const RecipeDetailsScreen = (props) => {
     <ScrollView style={styles.container}>
       <View style={styles.carouselContainer}>
         <View style={styles.carousel}>
-          <Carousel
+          {/* <Carousel
             ref={slider1Ref}
             data={item.photosArray}
-            renderItem={renderImage}
+            renderItem={({ item }) => <RecipeCarouselImage item={item} />}
             sliderWidth={viewportWidth}
             itemWidth={viewportWidth}
             activeSlideOffset={0.05}
@@ -89,7 +84,8 @@ export const RecipeDetailsScreen = (props) => {
             inactiveDotScale={0.6}
             carouselRef={slider1Ref.current}
             tappableDots={!!slider1Ref.current}
-          />
+          /> */}
+          <RecipeCarousal item={item} />
         </View>
       </View>
       <View style={styles.infoRecipeContainer}>
