@@ -7,6 +7,8 @@ import { CategoryItemsListScreen } from "../../features/categories/screens/categ
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { CategoriesNavigator } from "./categories.navigator";
 import { SearchNavigator } from "./search.navigator";
+import { FavoritesScreen } from "../../features/favorites/screens/favorites.screen";
+
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
@@ -14,6 +16,7 @@ const TAB_ICON = {
   Categories: "md-list",
   Search: "md-search",
   Settings: "md-settings",
+  Favorites: "md-heart",
 };
 
 const createScreenOptions = ({ route }) => {
@@ -35,8 +38,9 @@ export const AppNavigator = () => (
     }}
   >
     <Tab.Screen name="Home" component={RecipesNavigator} />
-    <Tab.Screen name="Categories" component={CategoriesNavigator} />
     <Tab.Screen name="Search" component={SearchNavigator} />
+    <Tab.Screen name="Favorites" component={FavoritesScreen} />
+    <Tab.Screen name="Categories" component={CategoriesNavigator} />
     <Tab.Screen name="Settings" component={SettingsScreen} />
   </Tab.Navigator>
 );

@@ -1,8 +1,8 @@
 import React, { useLayoutEffect } from "react";
 import { View } from "react-native";
 import { getRecipes } from "../../../services/data/mock.data.api";
-import { RecipeCard } from "../../../components/recipes/recipe-card.component";
-import { RecipesList, RecipesListContainer } from "./category-recipes.styles";
+import { RecipesListContainer } from "./category-recipes.styles";
+import { RecipesList } from "../../../components/recipes/recipes-list.component";
 
 export const CategoryRecipesScreen = (props) => {
   const { navigation, route } = props;
@@ -24,14 +24,9 @@ export const CategoryRecipesScreen = (props) => {
   return (
     <RecipesListContainer>
       <RecipesList
-        vertical
-        showsVerticalScrollIndicator={false}
         numColumns={2}
-        data={recipesArray}
-        renderItem={({ item }) => (
-          <RecipeCard item={item} onPressRecipeCard={onPressRecipe} />
-        )}
-        keyExtractor={(item) => `${item.recipeId}`}
+        recipes={recipesArray}
+        onPressRecipeHandler={onPressRecipe}
       />
     </RecipesListContainer>
   );

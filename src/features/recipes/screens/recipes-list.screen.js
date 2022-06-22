@@ -1,8 +1,7 @@
 import React from "react";
 import { recipes } from "../../../services/data/data.mock";
-import { RecipeList } from "./recipes-list.styles";
-import { RecipeCard } from "../../../components/recipes/recipe-card.component";
 import { SafeArea } from "../../../components/utils/safearea.component";
+import { RecipesList } from "../../../components/recipes/recipes-list.component";
 
 export const RecipesListScreen = ({ navigation }) => {
   const { navigate } = navigation;
@@ -13,17 +12,10 @@ export const RecipesListScreen = ({ navigation }) => {
 
   return (
     <SafeArea>
-      <RecipeList
-        vertical
-        showsVerticalScrollIndicator={false}
+      <RecipesList
+        recipes={recipes}
         numColumns={2}
-        data={recipes}
-        renderItem={({ item }) => {
-          return (
-            <RecipeCard item={item} onPressRecipeCard={onPressRecipeCard} />
-          );
-        }}
-        keyExtractor={(item) => `${item.recipeId}`}
+        onPressRecipeHandler={onPressRecipeCard}
       />
     </SafeArea>
   );

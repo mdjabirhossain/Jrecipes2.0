@@ -19,6 +19,9 @@ import { TextInput } from "react-native-gesture-handler";
 import { RecipeCard } from "../../../components/recipes/recipe-card.component";
 import { SafeArea } from "../../../components/utils/safearea.component";
 import { Search } from "../components/search.component";
+import { RecipesListContainer } from "../../categories/screens/category-recipes.styles";
+import { RecipeList } from "../../recipes/screens/recipes-list.styles";
+import { RecipesList } from "../../../components/recipes/recipes-list.component";
 
 export const SearchScreen = (props) => {
   const { navigation } = props;
@@ -82,16 +85,13 @@ export const SearchScreen = (props) => {
   return (
     <SafeArea>
       <Search onSearchHandler={handleSearch} />
-      <FlatList
-        vertical
-        showsVerticalScrollIndicator={false}
-        numColumns={2}
-        data={data}
-        renderItem={({ item }) => (
-          <RecipeCard item={item} onPressRecipeCard={onPressRecipe} />
-        )}
-        keyExtractor={(item) => `${item.recipeId}`}
-      />
+      <View>
+        <RecipesList
+          numColumns={2}
+          recipes={data}
+          onPressRecipeHandler={onPressRecipe}
+        />
+      </View>
     </SafeArea>
   );
 };
