@@ -1,13 +1,5 @@
 import React, { useRef, useState } from "react";
-import {
-  ScrollView,
-  Text,
-  View,
-  Image,
-  Dimensions,
-  TouchableHighlight,
-  TouchableOpacity,
-} from "react-native";
+import { Dimensions, TouchableHighlight, TouchableOpacity } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import {
   CarouselImageContainer,
@@ -60,13 +52,5 @@ export const RecipeCarousal = ({ item }) => {
         tappableDots={!!slider1Ref.current}
       />
     </>
-  );
-};
-
-export const RecipeDetails = () => {
-  return (
-    <ScrollView>
-      <View> Here </View>
-    </ScrollView>
   );
 };

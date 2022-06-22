@@ -1,5 +1,4 @@
 import React from "react";
-import { TouchableOpacity } from "react-native";
 import {
   RecipeCardContainer,
   RecipeCardPhoto,
@@ -7,16 +6,18 @@ import {
   RecipeCategoryText,
 } from "./recipe-card.styles";
 import { getCategoryName } from "../../../services/data/mock.data.api";
-import { Text, View } from "react-native";
+import { TouchableOpacity } from "react-native";
 
-export const RecipeCard = ({ item }) => {
+export const RecipeCard = ({ item, onPressRecipeCard }) => {
   return (
-    <RecipeCardContainer>
-      <RecipeCardPhoto source={{ uri: item.photo_url }} />
-      <RecipeCardTitle>{item.title}</RecipeCardTitle>
-      <RecipeCategoryText>
-        {getCategoryName(item.categoryId)}
-      </RecipeCategoryText>
-    </RecipeCardContainer>
+    <TouchableOpacity onPress={() => onPressRecipeCard(item)}>
+      <RecipeCardContainer>
+        <RecipeCardPhoto source={{ uri: item.photo_url }} />
+        <RecipeCardTitle>{item.title}</RecipeCardTitle>
+        <RecipeCategoryText>
+          {getCategoryName(item.categoryId)}
+        </RecipeCategoryText>
+      </RecipeCardContainer>
+    </TouchableOpacity>
   );
 };

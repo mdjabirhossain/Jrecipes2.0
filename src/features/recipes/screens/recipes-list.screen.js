@@ -1,12 +1,16 @@
 import React from "react";
-import { TouchableOpacity } from "react-native";
 import { recipes } from "../../../services/data/data.mock";
 import { RecipeList } from "./recipes-list.styles";
 import { RecipeCard } from "../components/recipe-card.component";
 import { SafeArea } from "../../../components/utils/safearea.component";
 
-export const HomeScreen = ({ navigation }) => {
+export const RecipesListScreen = ({ navigation }) => {
   const { navigate } = navigation;
+
+  const onPressRecipeCard = (item) => {
+    navigate("RecipeDetails", { item });
+  };
+
   return (
     <SafeArea>
       <RecipeList
@@ -16,11 +20,7 @@ export const HomeScreen = ({ navigation }) => {
         data={recipes}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity
-              onPress={() => navigate("RecipeDetails", { item })}
-            >
-              <RecipeCard item={item} />
-            </TouchableOpacity>
+            <RecipeCard item={item} onPressRecipeCard={onPressRecipeCard} />
           );
         }}
         keyExtractor={(item) => `${item.recipeId}`}
