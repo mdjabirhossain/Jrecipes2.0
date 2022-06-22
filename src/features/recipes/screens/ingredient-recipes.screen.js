@@ -10,7 +10,7 @@ import {
   IngredientPhotoContainer,
   IngredientRecipesContainer,
 } from "./ingredient-recipes.styles";
-import { RecipeCard } from "../components/recipe-card.component";
+import { RecipeCard } from "../../../components/recipes/recipe-card.component";
 
 export const IngredientRecipesScreen = (props) => {
   const { navigation, route } = props;

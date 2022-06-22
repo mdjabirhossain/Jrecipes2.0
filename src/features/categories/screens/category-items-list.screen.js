@@ -31,7 +31,7 @@ export const CategoryItemsListScreen = ({ navigation }) => {
   const onPressCategory = (item) => {
     const title = item.name;
     const category = item;
-    navigation.navigate("RecipesList", { category, title });
+    navigation.navigate("CategoryRecipes", { category, title });
   };
 
   return (

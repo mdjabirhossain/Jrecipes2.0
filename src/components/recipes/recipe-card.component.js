@@ -5,7 +5,7 @@ import {
   RecipeCardTitle,
   RecipeCategoryText,
 } from "./recipe-card.styles";
-import { getCategoryName } from "../../../services/data/mock.data.api";
+import { getCategoryName } from "../../services/data/mock.data.api";
 import { TouchableOpacity } from "react-native";
 
 export const RecipeCard = ({ item, onPressRecipeCard }) => {
