@@ -81,7 +81,7 @@ export const SearchScreen = (props) => {
 
   return (
     <SafeArea>
-      <Search />
+      <Search onSearchHandler={handleSearch} />
       <FlatList
         vertical
         showsVerticalScrollIndicator={false}
