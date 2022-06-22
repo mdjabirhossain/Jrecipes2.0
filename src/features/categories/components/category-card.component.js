@@ -8,9 +8,9 @@ import {
 } from "./category-card.styles";
 import { getNumberOfRecipes } from "../../../services/data/mock.data.api";
 
-export const CategoryItemCard = ({ item }) => {
+export const CategoryItemCard = ({ item, onPressCategoryItemCard }) => {
   return (
-    <TouchableOpacity onPress={() => onPressCategory(item)}>
+    <TouchableOpacity onPress={() => onPressCategoryItemCard(item)}>
       <CategoryItemContainer>
         <CategoryItemImage source={{ uri: item.photo_url }} />
         <CategoryItemName>{item.name}</CategoryItemName>
