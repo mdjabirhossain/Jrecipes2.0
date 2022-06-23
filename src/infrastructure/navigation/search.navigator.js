@@ -3,7 +3,7 @@ import {
   createStackNavigator,
   TransitionPresets,
 } from "@react-navigation/stack";
-import { SearchScreen } from "../../features/search/screens/search.screen";
+import { SearchScreen } from "../../Screens/Search/search.screen";
 
 const SearchStack = createStackNavigator();
 

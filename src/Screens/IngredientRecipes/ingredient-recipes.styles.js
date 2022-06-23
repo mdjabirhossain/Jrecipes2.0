@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { RecipeCard } from "../../../AppStyles";
+import { RecipeCard } from "../../AppStyles";
 import styled from "styled-components/native";
 
 const styles = StyleSheet.create({

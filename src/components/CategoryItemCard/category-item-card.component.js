@@ -5,8 +5,8 @@ import {
   CategoryItemImage,
   CategoryItemName,
   CategoryItemInfo,
-} from "./category-card.styles";
-import { getNumberOfRecipes } from "../../../services/data/mock.data.api";
+} from "./category-item-card.styles";
+import { getNumberOfRecipes } from "../../Services/data/mock.data.api";
 
 export const CategoryItemCard = ({ item, onPressCategoryItemCard }) => {
   return (

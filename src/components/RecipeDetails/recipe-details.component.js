@@ -1,11 +1,8 @@
 import React, { useRef, useState } from "react";
-import { Dimensions, TouchableHighlight, TouchableOpacity } from "react-native";
+import { Dimensions, TouchableOpacity } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
-import {
-  CarouselImageContainer,
-  CarouselImage,
-} from "../screens/recipe-details.styles";
-import styles from "../screens/recipe-details.styles";
+import { CarouselImageContainer, CarouselImage } from "./recipe-details.styles";
+import styles from "./recipe-details.styles";
 
 export const RecipeCarouselImage = ({ item }) => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
-import { recipes } from "../../../services/data/data.mock";
-import { SafeArea } from "../../../components/utils/safearea.component";
-import { RecipesList } from "../../../components/recipes/recipes-list.component";
+import { recipes } from "../../Services/data/data.mock";
+import { SafeArea } from "../../Components/Utils/safearea.component";
+import { RecipesList } from "../../Components/RecipesList/recipes-list.component";
 
 export const RecipesListScreen = ({ navigation }) => {
   const { navigate } = navigation;

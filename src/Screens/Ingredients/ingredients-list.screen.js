@@ -2,12 +2,12 @@ import React, { useLayoutEffect } from "react";
 import {
   getIngredientName,
   getAllIngredients,
-} from "../../../services/data/mock.data.api";
+} from "../../Services/data/mock.data.api";
 import {
   IngredientsList,
   IngredientsListContainer,
 } from "./ingredients-list.styles";
-import { IngredientCard } from "../components/ingredient-card.component";
+import { IngredientCard } from "../../Components/IngredientCard/ingredient-card.component";
 
 export const IngredientsListScreen = ({ navigation, route }) => {
   const item = route.params?.ingredients;

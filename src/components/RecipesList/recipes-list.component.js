@@ -1,6 +1,6 @@
 import React from "react";
 import { FlatList } from "react-native";
-import { RecipeCard } from "./recipe-card.component";
+import { RecipeCard } from "../RecipeCard/recipe-card.component";
 import styled from "styled-components/native";
 
 const RecipesListContainer = styled.View``;

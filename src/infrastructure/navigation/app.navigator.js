@@ -1,13 +1,12 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { colors } from "../../infrastructure/theme/colors";
+import { colors } from "../../Infrastructure/Theme/colors";
 import { RecipesNavigator } from "./recipes.navigator";
-import { SettingsScreen } from "../../features/settings/settings.screen";
-import { CategoryItemsListScreen } from "../../features/categories/screens/category-items-list.screen";
+import { SettingsScreen } from "../../Screens/Settings/settings.screen";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { CategoriesNavigator } from "./categories.navigator";
 import { SearchNavigator } from "./search.navigator";
-import { FavoritesScreen } from "../../features/favorites/screens/favorites.screen";
+import { FavoritesScreen } from "../../Screens/Favorites/favorites.screen";
 
 const Tab = createBottomTabNavigator();
 

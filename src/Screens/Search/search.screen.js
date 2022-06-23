@@ -8,20 +8,16 @@ import {
   Pressable,
 } from "react-native";
 import styles from "./search.styles";
-import MenuImage from "../../categories/components/menu-image.component.js";
+import MenuImage from "../../Components/MenuImage/menu-image.component.js";
 import {
   getCategoryName,
   getRecipesByRecipeName,
   getRecipesByCategoryName,
   getRecipesByIngredientName,
-} from "../../../services/data/mock.data.api";
-import { TextInput } from "react-native-gesture-handler";
-import { RecipeCard } from "../../../components/recipes/recipe-card.component";
-import { SafeArea } from "../../../components/utils/safearea.component";
-import { Search } from "../components/search.component";
-import { RecipesListContainer } from "../../categories/screens/category-recipes.styles";
-import { RecipeList } from "../../recipes/screens/recipes-list.styles";
-import { RecipesList } from "../../../components/recipes/recipes-list.component";
+} from "../../Services/data/mock.data.api";
+import { SafeArea } from "../../Components/Utils/safearea.component";
+import { Search } from "../../Components/Search/search.component";
+import { RecipesList } from "../../Components/RecipesList/recipes-list.component";
 
 export const SearchScreen = (props) => {
   const { navigation } = props;

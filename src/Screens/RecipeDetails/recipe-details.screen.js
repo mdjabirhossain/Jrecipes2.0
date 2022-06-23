@@ -5,10 +5,10 @@ import {
   getIngredientName,
   getCategoryName,
   getCategoryById,
-} from "../../../services/data/mock.data.api";
-import BackButton from "../../../components/utils/backbutton.component";
-import ViewIngredientsButton from "../../../components/utils/view-ingredients-button.component";
-import { RecipeCarousal } from "../components/recipe-details.component";
+} from "../../Services/data/mock.data.api";
+import BackButton from "../../Components/BackButton/backbutton.component";
+import ViewIngredientsButton from "../../Components/ViewIngredients/view-ingredients-button.component";
+import { RecipeCarousal } from "../../Components/RecipeDetails/recipe-details.component";
 import {
   RecipeScrollView,
   CarouselContainer,
@@ -26,19 +26,19 @@ export const RecipeDetailsScreen = ({ navigation, route }) => {
   const category = getCategoryById(item.categoryId);
   const title = getCategoryName(category.id);
 
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerTransparent: "true",
-      headerLeft: () => (
-        <BackButton
-          onPress={() => {
-            navigation.goBack();
-          }}
-        />
-      ),
-      headerRight: () => <View />,
-    });
-  }, []);
+  // useLayoutEffect(() => {
+  //   navigation.setOptions({
+  //     headerTransparent: "true",
+  //     headerLeft: () => (
+  //       <BackButton
+  //         onPress={() => {
+  //           navigation.goBack();
+  //         }}
+  //       />
+  //     ),
+  //     headerRight: () => <View />,
+  //   });
+  // }, []);
 
   const onPressIngredient = (item) => {
     var name = getIngredientName(item);
@@ -68,7 +68,7 @@ export const RecipeDetailsScreen = ({ navigation, route }) => {
         <OtherInfoContainer>
           <ClockPhoto
             style={styles.infoPhoto}
-            source={require("../../../../assets/icons/time.png")}
+            source={require("../../../assets/icons/time.png")}
           />
           <TimeNeeded>{item.time} minutes </TimeNeeded>
         </OtherInfoContainer>

@@ -1,12 +1,12 @@
 import React, { useLayoutEffect } from "react";
 import { View } from "react-native";
-import { categories } from "../../../services/data/data.mock";
-import MenuImage from "../components/menu-image.component.js.js";
+import { categories } from "../../Services/data/data.mock";
+import MenuImage from "../../Components/MenuImage/menu-image.component.js";
 import {
   CategoriesList,
   CategoriesListContainer,
 } from "./category-items-list.styles";
-import { CategoryItemCard } from "../components/category-card.component";
+import { CategoryItemCard } from "../../Components/CategoryItemCard/category-item-card.component";
 
 export const CategoryItemsListScreen = ({ navigation }) => {
   useLayoutEffect(() => {

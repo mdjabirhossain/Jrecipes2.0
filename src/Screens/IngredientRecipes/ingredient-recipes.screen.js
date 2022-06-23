@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from "react";
 import {
   getIngredientUrl,
   getRecipesByIngredient,
-} from "../../../services/data/mock.data.api";
+} from "../../Services/data/mock.data.api";
 import {
   IngredientRecipesList,
   IngredientTitle,
@@ -10,7 +10,7 @@ import {
   IngredientPhotoContainer,
   IngredientRecipesContainer,
 } from "./ingredient-recipes.styles";
-import { RecipeCard } from "../../../components/recipes/recipe-card.component";
+import { RecipeCard } from "../../Components/RecipeCard/recipe-card.component";
 
 export const IngredientRecipesScreen = (props) => {
   const { navigation, route } = props;

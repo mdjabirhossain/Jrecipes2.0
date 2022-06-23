@@ -1,8 +1,8 @@
 import React, { useLayoutEffect } from "react";
 import { View } from "react-native";
-import { getRecipes } from "../../../services/data/mock.data.api";
+import { getRecipes } from "../../Services/data/mock.data.api";
 import { RecipesListContainer } from "./category-recipes.styles";
-import { RecipesList } from "../../../components/recipes/recipes-list.component";
+import { RecipesList } from "../../Components/RecipesList/recipes-list.component";
 
 export const CategoryRecipesScreen = (props) => {
   const { navigation, route } = props;

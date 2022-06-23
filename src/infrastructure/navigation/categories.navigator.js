@@ -3,9 +3,9 @@ import {
   createStackNavigator,
   TransitionPresets,
 } from "@react-navigation/stack";
-import { CategoryItemsListScreen } from "../../features/categories/screens/category-items-list.screen";
-import { CategoryRecipesScreen } from "../../features/categories/screens/category-recipes.screen";
-import { RecipeDetailsScreen } from "../../features/recipes/screens/recipe-details.screen";
+import { CategoryItemsListScreen } from "../../Screens/CategoryItems/category-items-list.screen";
+import { CategoryRecipesScreen } from "../../Screens/CategoryRecipes/category-recipes.screen";
+import { RecipeDetailsScreen } from "../../Screens/RecipeDetails/recipe-details.screen";
 
 const CategoriesStack = createStackNavigator();
 

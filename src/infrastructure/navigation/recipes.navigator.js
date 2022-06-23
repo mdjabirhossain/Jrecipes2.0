@@ -3,10 +3,10 @@ import {
   createStackNavigator,
   TransitionPresets,
 } from "@react-navigation/stack";
-import { RecipesListScreen } from "../../features/recipes/screens/recipes-list.screen";
-import { RecipeDetailsScreen } from "../../features/recipes/screens/recipe-details.screen";
-import { IngredientsListScreen } from "../../features/recipes/screens/ingredients-list.screen";
-import { IngredientRecipesScreen } from "../../features/recipes/screens/ingredient-recipes.screen";
+import { RecipesListScreen } from "../../Screens/Home/recipes-list.screen";
+import { RecipeDetailsScreen } from "../../Screens/RecipeDetails/recipe-details.screen";
+import { IngredientsListScreen } from "../../Screens/Ingredients/ingredients-list.screen";
+import { IngredientRecipesScreen } from "../../Screens/IngredientRecipes/ingredient-recipes.screen";
 const RecipesStack = createStackNavigator();
 
 export const RecipesNavigator = () => {

@@ -1,8 +1,8 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { ThemeProvider } from "styled-components/native";
-import { theme } from "./src/infrastructure/theme";
-import { Navigation } from "./src/infrastructure/navigation";
+import { theme } from "./src/Infrastructure/Theme";
+import { Navigation } from "./src/Infrastructure/Navigation";
 
 export default function App() {
   return (

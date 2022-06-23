@@ -11,7 +11,7 @@ export default function MenuImage(props) {
     >
       <Image
         style={styles.headerButtonImage}
-        source={require("../../../../assets/icons/menu.png")}
+        source={require("../../../assets/icons/menu.png")}
       />
     </TouchableOpacity>
   );
