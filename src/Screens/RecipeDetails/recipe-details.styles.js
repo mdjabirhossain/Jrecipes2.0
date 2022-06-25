@@ -2,6 +2,8 @@ import { StyleSheet, Dimensions } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import styled from "styled-components/native";
 import { Image } from "react-native";
+import { Card } from "react-native-paper";
+
 const { width: viewportWidth } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
@@ -60,6 +62,10 @@ export const CarouselContainer = styled.View`
   min-height: 250px;
 `;
 
+export const RecipeImageContainer = styled.View`
+  min-height: 250px;
+`;
+
 export const RecipeInfoContainer = styled.View`
   flex: 1;
   margin: 25px;
@@ -74,20 +80,22 @@ export const RecipeTitle = styled.Text`
   font-weight: bold;
   color: black;
   text-align: center;
+  margin-bottom: -5px;
 `;
 
 export const OtherInfoContainer = styled.View`
   flex: 1;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  padding: ${(props) => props.theme.space[3]};
+  margin-top: -20px;
 `;
 
 export const RecipeDescription = styled.Text`
   text-align: left;
   font-size: 16px;
-  margin-top: 30;
-  margin: 15px;
+  margin: 20px;
 `;
 
 export const CategoryTitle = styled.Text`
@@ -107,4 +115,16 @@ export const TimeNeeded = styled.Text`
   font-size: 14;
   font-weight: bold;
   margin-left: 5px;
+`;
+
+export const RecipeCardImage = styled(Card)`
+  background-color: ${(props) => props.theme.colors.bg.primary};
+  width: 95%;
+  align-self: center;
+`;
+
+export const RecipeCardImageCover = styled(Card.Cover)`
+  padding: ${(props) => props.theme.space[3]};
+  height: 300px;
+  background-color: ${(props) => props.theme.colors.bg.primary};
 `;

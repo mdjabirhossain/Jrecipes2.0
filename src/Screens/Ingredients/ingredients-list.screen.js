@@ -8,10 +8,9 @@ import {
   IngredientsListContainer,
 } from "./ingredients-list.styles";
 import { IngredientCard } from "../../Components/IngredientCard/ingredient-card.component";
-
+import { httpGetRecipesByIngredient } from "../../Hooks/requests";
 export const IngredientsListScreen = ({ navigation, route }) => {
-  const item = route.params?.ingredients;
-  const ingredientsArray = getAllIngredients(item);
+  const ingredientsArray = route.params?.ingredients;
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -23,9 +22,10 @@ export const IngredientsListScreen = ({ navigation, route }) => {
   }, []);
 
   const onPressIngredient = (item) => {
-    let name = getIngredientName(item.ingredientId);
+    let name = item.ingredientName;
+    let url = item.ingredientImage;
     let ingredient = item.ingredientId;
-    navigation.navigate("IngredientRecipes", { ingredient, name });
+    navigation.navigate("IngredientRecipes", { ingredient, name, url });
   };
 
   return (
@@ -36,9 +36,12 @@ export const IngredientsListScreen = ({ navigation, route }) => {
         numColumns={3}
         data={ingredientsArray}
         renderItem={({ item }) => (
-          <IngredientCard item={item} onPressHandler={onPressIngredient} />
+          <IngredientCard
+            item={item}
+            onPressHandler={() => onPressIngredient(item)}
+          />
         )}
-        keyExtractor={(item) => `${item.recipeId}`}
+        keyExtractor={(item) => `${item.ingredientId}`}
       />
     </IngredientsListContainer>
   );

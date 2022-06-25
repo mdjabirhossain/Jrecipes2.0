@@ -24,6 +24,7 @@ export const Search = ({
         //   search(searchKeyword);
         // }}
         onChangeText={(text) => {
+          setSearchKeyword(text);
           onSearchHandler(text);
         }}
       />

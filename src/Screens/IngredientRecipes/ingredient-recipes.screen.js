@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import {
   getIngredientUrl,
   getRecipesByIngredient,
@@ -11,18 +11,28 @@ import {
   IngredientRecipesContainer,
 } from "./ingredient-recipes.styles";
 import { RecipeCard } from "../../Components/RecipeCard/recipe-card.component";
+import { httpGetRecipesByIngredient } from "../../Hooks/requests";
 
 export const IngredientRecipesScreen = (props) => {
   const { navigation, route } = props;
-
-  const ingredientId = route.params?.ingredient;
-  const ingredientUrl = getIngredientUrl(ingredientId);
+  const [recipes, setRecipes] = useState(null);
+  const ingredientUrl = route.params?.url;
   const ingredientName = route.params?.name;
 
   useLayoutEffect(() => {
     navigation.setOptions({
       title: route.params?.name,
     });
+  }, []);
+
+  const getRecipesByIngredient = async () => {
+    console.log("ingredientURL: ", ingredientUrl);
+    const result = await httpGetRecipesByIngredient(ingredientName);
+    setRecipes(result);
+  };
+
+  useEffect(() => {
+    getRecipesByIngredient();
   }, []);
 
   const onPressRecipeCard = (item) => {
@@ -39,7 +49,7 @@ export const IngredientRecipesScreen = (props) => {
         vertical
         showsVerticalScrollIndicator={false}
         numColumns={2}
-        data={getRecipesByIngredient(ingredientId)}
+        data={recipes}
         renderItem={({ item }) => (
           <RecipeCard item={item} onPressRecipeCard={onPressRecipeCard} />
         )}

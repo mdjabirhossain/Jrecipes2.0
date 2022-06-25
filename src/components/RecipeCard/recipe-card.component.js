@@ -14,9 +14,7 @@ export const RecipeCard = ({ item, onPressRecipeCard }) => {
       <RecipeCardContainer>
         <RecipeCardPhoto source={{ uri: item.photo_url }} />
         <RecipeCardTitle>{item.title}</RecipeCardTitle>
-        <RecipeCategoryText>
-          {getCategoryName(item.categoryId)}
-        </RecipeCategoryText>
+        <RecipeCategoryText></RecipeCategoryText>
       </RecipeCardContainer>
     </TouchableOpacity>
   );

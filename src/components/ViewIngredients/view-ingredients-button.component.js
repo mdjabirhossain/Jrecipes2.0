@@ -1,6 +1,5 @@
 import React from "react";
 import { TouchableOpacity, Image, Text, View } from "react-native";
-import PropTypes from "prop-types";
 import styles from "./view-ingredients-button.styles";
 
 export default function ViewIngredientsButton(props) {
@@ -15,9 +14,3 @@ export default function ViewIngredientsButton(props) {
     </TouchableOpacity>
   );
 }
-
-ViewIngredientsButton.propTypes = {
-  onPress: PropTypes.func,
-  source: PropTypes.number,
-  title: PropTypes.string,
-};
